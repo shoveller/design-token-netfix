@@ -1,0 +1,33 @@
+{
+  "name": "design-token-netfix",
+  "version": "1.0.0",
+  "description": "넷플릭스 클론코딩의 디자인토큰",
+  "main": "build-tailwindcss.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transform": "token-transformer data/tokens.json data/global.json global",
+    "build-tailwindcss": "node build-tailwindcss.js",
+    "build-theme": "node build-theme.js",
+    "build": "run-p transform build-theme build-tailwindcss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoveller/design-token-netfix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shoveller/design-token-netfix/issues"
+  },
+  "homepage": "https://github.com/shoveller/design-token-netfix#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sd-tailwindcss-transformer": "^1.2.0",
+    "style-dictionary": "^3.7.2",
+    "token-transformer": "^0.0.29"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
