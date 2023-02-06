@@ -24,6 +24,12 @@ styleDictionary.registerTransform(shadow_shorthand);
 styleDictionary.registerTransform(typography_shorthand);
 styleDictionary.registerTransform(name_js);
 
+/**
+ *
+ * @param theme
+ * @param buildPath
+ * @returns {import('style-dictionary/types').Platform}
+ */
 module.exports.makeCSSTheme = (/** string */  theme,/** string */ buildPath) => ({
     buildPath,
     transforms: [
@@ -43,6 +49,12 @@ module.exports.makeCSSTheme = (/** string */  theme,/** string */ buildPath) => 
     ],
 });
 
+/**
+ *
+ * @param theme
+ * @param buildPath
+ * @returns {import('style-dictionary/types').Platform}
+ */
 module.exports.makeSCSSTheme = (/** string */  theme,/** string */ buildPath) => ({
     buildPath,
     transforms: [
@@ -61,6 +73,12 @@ module.exports.makeSCSSTheme = (/** string */  theme,/** string */ buildPath) =>
     ],
 });
 
+/**
+ *
+ * @param theme
+ * @param buildPath
+ * @returns {import('style-dictionary/types').Platform}
+ */
 module.exports.makeESMTheme = (/** string */  theme,/** string */ buildPath) => ({
     buildPath,
     transforms: ['name/esm', 'pxToRem'],
@@ -72,6 +90,12 @@ module.exports.makeESMTheme = (/** string */  theme,/** string */ buildPath) => 
     ],
 });
 
+/**
+ *
+ * @param theme
+ * @param buildPath
+ * @returns {import('style-dictionary/types').Platform}
+ */
 module.exports.makeCJSTheme = (/** string */  theme,/** string */ buildPath) => ({
     buildPath,
     transforms: ['pxToRem'],

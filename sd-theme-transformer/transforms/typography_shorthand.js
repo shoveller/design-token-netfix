@@ -1,3 +1,6 @@
+/**
+ * @type {import('style-dictionary/types').Transform}
+ */
 module.exports.typography_shorthand = {
     name: 'typography/shorthand',
     type: 'value',

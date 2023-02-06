@@ -1,3 +1,6 @@
+/**
+ * @type {import('style-dictionary/types').Transform}
+ */
 module.exports.sizes_px = {
     name: 'sizes/px',
     type: 'value',

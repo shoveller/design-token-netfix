@@ -3,7 +3,7 @@ const {makeCSSTheme, makeSCSSTheme, makeESMTheme, makeCJSTheme} = require("./pla
 /**
  *
  * @param  {theme: string, INPUT_DIR: string, buildPath: string}
- * @returns {{source: string[], platforms: {platforms.js: {transforms: string[], files: [{destination: string, format: string, selector: (string|string)}], buildPath: string}, scss: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}, js: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}, jsModule: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}}}}
+ * @returns {import('style-dictionary/types').Config}
  */
 module.exports.makeThemeConfig = ({theme, INPUT_DIR, buildPath}) => {
     return {

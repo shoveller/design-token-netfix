@@ -3,6 +3,9 @@ const transformShadow = (shadow) => {
     return `${x} ${y} ${blur} ${spread} ${color}`;
 }
 
+/**
+ * @type {import('style-dictionary/types').Transform}
+ */
 module.exports.shadow_shorthand = {
     name: 'shadow/shorthand',
     type: 'value',

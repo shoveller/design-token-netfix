@@ -19,6 +19,9 @@ const recursiveleyFlattenDictionary = (obj) => {
     return tree;
 };
 
+/**
+ * @type {import('style-dictionary/types').Format}
+ */
 module.exports.javascript_cjs = {
     name: 'javascript/cjs',
     formatter({ dictionary, file }) {

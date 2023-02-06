@@ -1,8 +1,8 @@
-const isPx = (value) => {
-  // eslint-disable-next-line no-useless-escape
-  return /[\d\.]+px$/.test(value);
-}
+const isPx = (/** string */value) => /[\d\.]+px$/.test(value)
 
+/**
+ * @type {import('style-dictionary/types').Transform}
+ */
 module.exports.pxToRem = {
   name: 'pxToRem',
   type: 'value',
