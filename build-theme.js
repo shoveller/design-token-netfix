@@ -7,7 +7,7 @@ console.log('🪩  테마 빌드 START ---------------');
     const SD = styleDictionary.extend(makeThemeConfig({
         theme,
         INPUT_DIR: 'data',
-        OUTPUT_DIR: 'theme'
+        buildPath: 'theme/'
     }));
     SD.buildAllPlatforms()
 });
