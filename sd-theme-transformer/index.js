@@ -77,7 +77,7 @@ const setJsModule = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     transforms: ['pxToRem'],
     files: [
         {
-            destination: `js/module/${theme}.js`,
+            destination: `js/cjs/${theme}.js`,
             format: `javascript/cjs`,
         },
     ],
