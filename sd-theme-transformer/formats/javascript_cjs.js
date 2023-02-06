@@ -1,4 +1,5 @@
 const { formatHelpers: { fileHeader } } = require('style-dictionary');
+const {camelCase} = require('lodash')
 
 const recursiveleyFlattenDictionary = (obj) => {
     const tree = {};
@@ -11,7 +12,7 @@ const recursiveleyFlattenDictionary = (obj) => {
     } else {
         for (const name in obj) {
             if (obj.hasOwnProperty.call(obj, name)) {
-                tree[name] = recursiveleyFlattenDictionary(obj[name]);
+                tree[camelCase(name)] = recursiveleyFlattenDictionary(obj[name]);
             }
         }
     }
