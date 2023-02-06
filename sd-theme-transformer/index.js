@@ -3,7 +3,7 @@ const {name_js} = require("./transforms/name_js");
 const {sizes_px} = require("./transforms/sizes_px");
 const {typography_shorthand} = require("./transforms/typography_shorthand");
 const {shadow_shorthand} = require("./transforms/shadow_shorthand");
-const {name_js_es6} = require("./transforms/name_js_es6");
+const {name_esm} = require("sd-theme-transformer/transforms/name_esm");
 const {css_variables} = require("./formats/css_variables");
 const {javascript_cjs} = require("./formats/javascript_cjs");
 const styleDictionary = require('style-dictionary');
@@ -17,7 +17,7 @@ styleDictionary.registerFormat(javascript_cjs);
 /**
  * 트랜스포머 등록
  */
-styleDictionary.registerTransform(name_js_es6);
+styleDictionary.registerTransform(name_esm);
 styleDictionary.registerTransform(sizes_px);
 styleDictionary.registerTransform(pxToRem);
 styleDictionary.registerTransform(shadow_shorthand);
@@ -63,7 +63,7 @@ const setSCSS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
 
 const setESM = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
-    transforms: ['name/js/es6', 'pxToRem'],
+    transforms: ['name/esm', 'pxToRem'],
     files: [
         {
             destination: `js/esm/${theme}.js`,

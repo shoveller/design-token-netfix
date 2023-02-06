@@ -1,5 +1,7 @@
-module.exports.name_js_es6 = {
-    name: 'name/js/es6',
+const {camelCase} = require("lodash");
+
+module.exports.name_esm = {
+    name: 'name/esm',
     type: 'name',
     transformer(token) {
         const tokenPath = token.path.join(' ');
@@ -9,6 +11,6 @@ module.exports.name_js_es6 = {
                 tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1);
         }
 
-        return tokenPathItems.join('');
+        return camelCase(tokenPathItems.join(''));
     },
 }

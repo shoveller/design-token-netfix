@@ -6,7 +6,7 @@ const StyleDictionary = StyleDictionaryModule.extend(
         type: 'all',
         source: ['data/global.json'],
         buildPath: 'theme/',
-        isVariables: true,
+        // isVariables: true,
         tailwind: {
             content: ['./index.html', './src/**/*.html', './src/**/*.{js,ts,jsx,tsx}'],
             darkMode: "class"
