@@ -26,11 +26,10 @@ styleDictionary.registerTransform(name_js);
 
 /**
  *
- * @param theme
- * @param buildPath
+ * @param {buildPath: string, destination: string, selector: string}
  * @returns {import('style-dictionary/types').Platform}
  */
-module.exports.makeCSSTheme = (/** string */  theme,/** string */ buildPath) => ({
+module.exports.makeCSSTheme = ({ buildPath, destination, selector = ':root' }) => ({
     buildPath,
     transforms: [
         'attribute/cti',
@@ -42,20 +41,19 @@ module.exports.makeCSSTheme = (/** string */  theme,/** string */ buildPath) => 
     ],
     files: [
         {
-            destination: `css/${theme}.css`,
+            destination,
             format: 'css/variables',
-            selector: theme.includes('global') ? ':root' : `.${theme}-theme`,
+            selector,
         },
     ],
 });
 
 /**
  *
- * @param theme
- * @param buildPath
+ * @param {buildPath: string, destination: string}
  * @returns {import('style-dictionary/types').Platform}
  */
-module.exports.makeSCSSTheme = (/** string */  theme,/** string */ buildPath) => ({
+module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
     buildPath,
     transforms: [
         'attribute/cti',
@@ -67,7 +65,7 @@ module.exports.makeSCSSTheme = (/** string */  theme,/** string */ buildPath) =>
     ],
     files: [
         {
-            destination: `scss/${theme}.scss`,
+            destination,
             format: `scss/variables`,
         },
     ],
@@ -75,16 +73,15 @@ module.exports.makeSCSSTheme = (/** string */  theme,/** string */ buildPath) =>
 
 /**
  *
- * @param theme
- * @param buildPath
+ * @param {buildPath: string, destination: string}
  * @returns {import('style-dictionary/types').Platform}
  */
-module.exports.makeESMTheme = (/** string */  theme,/** string */ buildPath) => ({
+module.exports.makeESMTheme = ({ buildPath, destination }) => ({
     buildPath,
     transforms: ['name/esm', 'pxToRem'],
     files: [
         {
-            destination: `js/esm/${theme}.js`,
+            destination,
             format: `javascript/es6`,
         },
     ],
@@ -92,16 +89,15 @@ module.exports.makeESMTheme = (/** string */  theme,/** string */ buildPath) => 
 
 /**
  *
- * @param theme
- * @param buildPath
+ * @param {buildPath: string, destination: string}
  * @returns {import('style-dictionary/types').Platform}
  */
-module.exports.makeCJSTheme = (/** string */  theme,/** string */ buildPath) => ({
+module.exports.makeCJSTheme = ({ buildPath, destination }) => ({
     buildPath,
     transforms: ['pxToRem'],
     files: [
         {
-            destination: `js/cjs/${theme}.js`,
+            destination,
             format: `javascript/cjs`,
         },
     ],
