@@ -18,8 +18,8 @@ const recursiveleyFlattenDictionary = (obj) => {
     return tree;
 };
 
-module.exports.javascript_module = {
-    name: 'javascript/module',
+module.exports.javascript_cjs = {
+    name: 'javascript/cjs',
     formatter({ dictionary, file }) {
         return (
             fileHeader({ file }) +

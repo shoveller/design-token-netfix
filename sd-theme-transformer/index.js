@@ -5,14 +5,14 @@ const {typography_shorthand} = require("./transforms/typography_shorthand");
 const {shadow_shorthand} = require("./transforms/shadow_shorthand");
 const {name_js_es6} = require("./transforms/name_js_es6");
 const {css_variables} = require("./formats/css_variables");
-const {javascript_module} = require("./formats/javascript_module");
+const {javascript_cjs} = require("./formats/javascript_cjs");
 const styleDictionary = require('style-dictionary');
 
 /**
  * 포메터 등록
  */
 styleDictionary.registerFormat(css_variables);
-styleDictionary.registerFormat(javascript_module);
+styleDictionary.registerFormat(javascript_cjs);
 
 /**
  * 트랜스포머 등록
@@ -78,7 +78,7 @@ const setJsModule = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     files: [
         {
             destination: `js/module/${theme}.js`,
-            format: `javascript/module`,
+            format: `javascript/cjs`,
         },
     ],
 });
