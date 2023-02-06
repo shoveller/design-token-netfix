@@ -24,12 +24,7 @@ styleDictionary.registerTransform(shadow_shorthand);
 styleDictionary.registerTransform(typography_shorthand);
 styleDictionary.registerTransform(name_js);
 
-const INPUT_DIR = 'data';
-
-// 출력 디렉토리 이름
-const OUTPUT_DIR = 'theme';
-
-const setCSS = (/** string */  theme) => ({
+const setCSS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: [
         'attribute/cti',
@@ -48,7 +43,7 @@ const setCSS = (/** string */  theme) => ({
     ],
 });
 
-const setSCSS = (/** string */  theme) => ({
+const setSCSS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: [
         'attribute/cti',
@@ -66,7 +61,7 @@ const setSCSS = (/** string */  theme) => ({
     ],
 });
 
-const setJS = (/** string */ theme) => ({
+const setJS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: ['name/js/es6', 'pxToRem'],
     files: [
@@ -77,7 +72,7 @@ const setJS = (/** string */ theme) => ({
     ],
 });
 
-const setJsModule = (/** string */ theme) => ({
+const setJsModule = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: ['pxToRem'],
     files: [
@@ -88,12 +83,17 @@ const setJsModule = (/** string */ theme) => ({
     ],
 });
 
-module.exports.makeThemeConfig = (/** string */ theme) => ({
+/**
+ *
+ * @param  {theme: string, INPUT_DIR: string, OUTPUT_DIR: string}
+ * @returns {{source: string[], platforms: {css: {transforms: string[], files: [{destination: string, format: string, selector: (string|string)}], buildPath: string}, scss: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}, js: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}, jsModule: {transforms: string[], files: [{destination: string, format: string}], buildPath: string}}}}
+ */
+module.exports.makeThemeConfig = ({theme, INPUT_DIR, OUTPUT_DIR }) => ({
     source: [`${INPUT_DIR}/${theme}.json`],
     platforms: {
-        css: setCSS(theme),
-        scss: setSCSS(theme),
-        js: setJS(theme),
-        jsModule: setJsModule(theme),
+        css: setCSS(theme, OUTPUT_DIR),
+        scss: setSCSS(theme, OUTPUT_DIR),
+        js: setJS(theme, OUTPUT_DIR),
+        jsModule: setJsModule(theme, OUTPUT_DIR),
     },
 });
