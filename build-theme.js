@@ -8,6 +8,6 @@ console.log('🪩  테마 빌드 START ---------------');
         INPUT_DIR: 'data',
         OUTPUT_DIR: 'theme'
     }));
-    ['css', 'scss', 'js', 'jsModule'].map((platform) => SD.buildPlatform(platform));
+    SD.buildAllPlatforms()
 });
 console.log('\n🪩  테마 빌드 FINISHED ------------\n');
