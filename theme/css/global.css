@@ -1,5 +1,4 @@
-:root {
-  --colors-white: #ffffff;
+:root {  --colors-white: #ffffff;
   --colors-black: #010101;
   --colors-red-100: #faced0;
   --colors-red-200: #f59da1;
@@ -90,5 +89,4 @@
   --title-2x-large: Bold 60/120% SpoqaHanSans;
   --text-case-none: none;
   --text-decoration-none: none;
-  --paragraph-indent-0: 0;
-}
+  --paragraph-indent-0: 0;}
