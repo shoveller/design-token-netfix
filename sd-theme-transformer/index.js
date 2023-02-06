@@ -61,7 +61,7 @@ const setSCSS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     ],
 });
 
-const setJS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
+const setESM = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: ['name/js/es6', 'pxToRem'],
     files: [
@@ -72,7 +72,7 @@ const setJS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     ],
 });
 
-const setJsModule = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
+const setCJS = (/** string */  theme,/** string */ OUTPUT_DIR) => ({
     buildPath: `${OUTPUT_DIR}/`,
     transforms: ['pxToRem'],
     files: [
@@ -93,7 +93,7 @@ module.exports.makeThemeConfig = ({theme, INPUT_DIR, OUTPUT_DIR }) => ({
     platforms: {
         css: setCSS(theme, OUTPUT_DIR),
         scss: setSCSS(theme, OUTPUT_DIR),
-        js: setJS(theme, OUTPUT_DIR),
-        jsModule: setJsModule(theme, OUTPUT_DIR),
+        esm: setESM(theme, OUTPUT_DIR),
+        cjs: setCJS(theme, OUTPUT_DIR),
     },
 });
