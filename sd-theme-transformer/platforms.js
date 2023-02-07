@@ -77,7 +77,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeESMTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['name/symbol', 'px/rem'],
+    transforms: ['name/symbol', 'sizes/px', 'px/rem'],
     files: [
         {
             destination,
@@ -93,7 +93,7 @@ module.exports.makeESMTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeCJSTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['px/rem'],
+    transforms: ['sizes/px', 'px/rem'],
     files: [
         {
             destination,
