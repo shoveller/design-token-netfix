@@ -1,5 +1,4 @@
 const {px_rem} = require("./transforms/px_rem");
-const {name_js} = require("./transforms/name_js");
 const {sizes_px} = require("./transforms/sizes_px");
 const {typography_shorthand} = require("./transforms/typography_shorthand");
 const {shadow_shorthand} = require("./transforms/shadow_shorthand");
@@ -22,7 +21,6 @@ styleDictionary.registerTransform(sizes_px);
 styleDictionary.registerTransform(px_rem);
 styleDictionary.registerTransform(shadow_shorthand);
 styleDictionary.registerTransform(typography_shorthand);
-styleDictionary.registerTransform(name_js);
 
 /**
  *
@@ -38,6 +36,7 @@ module.exports.makeCSSTheme = ({ buildPath, destination, selector = ':root' }) =
         'shadow/shorthand',
         'px/rem',
         'typography/shorthand',
+        'name/symbol',
     ],
     files: [
         {
