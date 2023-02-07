@@ -3,7 +3,7 @@ const {name_js} = require("./transforms/name_js");
 const {sizes_px} = require("./transforms/sizes_px");
 const {typography_shorthand} = require("./transforms/typography_shorthand");
 const {shadow_shorthand} = require("./transforms/shadow_shorthand");
-const {name_esm} = require("./transforms/name_esm");
+const {name_symbol} = require("./transforms/name_symbol");
 const {css_variables} = require("./formats/css_variables");
 const {javascript_cjs} = require("./formats/javascript_cjs");
 const styleDictionary = require('style-dictionary');
@@ -17,7 +17,7 @@ styleDictionary.registerFormat(javascript_cjs);
 /**
  * 트랜스포머 등록
  */
-styleDictionary.registerTransform(name_esm);
+styleDictionary.registerTransform(name_symbol);
 styleDictionary.registerTransform(sizes_px);
 styleDictionary.registerTransform(px_rem);
 styleDictionary.registerTransform(shadow_shorthand);
@@ -62,6 +62,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
         'shadow/shorthand',
         'px/rem',
         'typography/shorthand',
+        'name/symbol',
     ],
     files: [
         {
@@ -78,7 +79,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeESMTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['name/esm', 'px/rem'],
+    transforms: ['name/symbol', 'px/rem'],
     files: [
         {
             destination,

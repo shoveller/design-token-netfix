@@ -3,10 +3,10 @@ const {camelCase} = require("lodash");
 /**
  * @type {import('style-dictionary/types').Transform}
  */
-module.exports.name_esm = {
-    name: 'name/esm',
+module.exports.name_symbol = {
+    name: 'name/symbol',
     type: 'name',
     transformer(token) {
-        return `${token.type}_${camelCase(token.path.join('_'))}`;
+        return [token.type, ...token.path].map(camelCase).join('_');
     },
 }
