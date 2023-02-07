@@ -5,7 +5,7 @@ module.exports.sizes_px = {
     name: 'sizes/px',
     type: 'value',
     matcher(token) {
-        return ['fontSize', 'spacing', 'borderRadius', 'borderWidth', 'sizing'].includes(token.type);
+        return ['fontSizes', 'spacing', 'borderRadius', 'borderWidth', 'sizing'].includes(token.type);
     },
     transformer(token) {
         return `${parseFloat(token.value)}px`;

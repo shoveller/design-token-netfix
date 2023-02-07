@@ -36,7 +36,6 @@ module.exports.makeCSSTheme = ({ buildPath, destination, selector = ':root' }) =
         'shadow/shorthand',
         'px/rem',
         'typography/shorthand',
-        'name/symbol',
     ],
     files: [
         {
