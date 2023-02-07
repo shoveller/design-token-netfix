@@ -1,4 +1,4 @@
-const {pxToRem} = require("./transforms/pxToRem");
+const {px_rem} = require("./transforms/px_rem");
 const {name_js} = require("./transforms/name_js");
 const {sizes_px} = require("./transforms/sizes_px");
 const {typography_shorthand} = require("./transforms/typography_shorthand");
@@ -19,7 +19,7 @@ styleDictionary.registerFormat(javascript_cjs);
  */
 styleDictionary.registerTransform(name_esm);
 styleDictionary.registerTransform(sizes_px);
-styleDictionary.registerTransform(pxToRem);
+styleDictionary.registerTransform(px_rem);
 styleDictionary.registerTransform(shadow_shorthand);
 styleDictionary.registerTransform(typography_shorthand);
 styleDictionary.registerTransform(name_js);
@@ -36,7 +36,7 @@ module.exports.makeCSSTheme = ({ buildPath, destination, selector = ':root' }) =
         'name/cti/kebab',
         'sizes/px',
         'shadow/shorthand',
-        'pxToRem',
+        'px/rem',
         'typography/shorthand',
     ],
     files: [
@@ -60,7 +60,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
         'name/cti/kebab',
         'sizes/px',
         'shadow/shorthand',
-        'pxToRem',
+        'px/rem',
         'typography/shorthand',
     ],
     files: [
@@ -78,7 +78,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeESMTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['name/esm', 'pxToRem'],
+    transforms: ['name/esm', 'px/rem'],
     files: [
         {
             destination,
@@ -94,7 +94,7 @@ module.exports.makeESMTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeCJSTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['pxToRem'],
+    transforms: ['px/rem'],
     files: [
         {
             destination,

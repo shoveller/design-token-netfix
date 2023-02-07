@@ -3,8 +3,8 @@ const isPx = (/** string */value) => /[\d\.]+px$/.test(value)
 /**
  * @type {import('style-dictionary/types').Transform}
  */
-module.exports.pxToRem = {
-  name: 'pxToRem',
+module.exports.px_rem = {
+  name: 'px/rem',
   type: 'value',
   transformer(token) {
     if (isPx(token.value)) {
