@@ -1,6 +1,6 @@
 const transformShadow = (shadow) => {
     const { x, y, blur, spread, color } = shadow;
-    return `${x} ${y} ${blur} ${spread} ${color}`;
+    return `${x}px ${y}px ${blur}px ${spread}px ${color}`;
 }
 
 /**
