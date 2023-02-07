@@ -20,8 +20,6 @@ module.exports.name_esm = {
             return camelCase(name);
         }
 
-        console.log(token)
-
         return `${token.type}${camelCase(name)}`;
     },
 }
