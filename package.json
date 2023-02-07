@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "transform": "token-transformer data/tokens.json data/global.json global",
+    "transform:global": "token-transformer design/tokens.json design/global.json global",
+    "transform:light": "token-transformer design/tokens.json design/light.json global,light global",
+    "transform:dark": "token-transformer design/tokens.json design/dark.json global,dark global",
+    "transform:all": "run-p transform:global transform:light transform:dark",
     "build-tailwindcss": "node build-tailwindcss.js",
     "build-theme": "node build-theme.js",
     "build": "run-p transform build-theme build-tailwindcss"
