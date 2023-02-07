@@ -2,6 +2,7 @@ const {px_rem} = require("./transforms/px_rem");
 const {sizes_px} = require("./transforms/sizes_px");
 const {typography_shorthand} = require("./transforms/typography_shorthand");
 const {shadow_shorthand} = require("./transforms/shadow_shorthand");
+const {shadow_properties} = require("./transforms/shadow_properties");
 const {name_symbol} = require("./transforms/name_symbol");
 const {css_variables} = require("./formats/css_variables");
 const {javascript_cjs} = require("./formats/javascript_cjs");
@@ -20,6 +21,7 @@ styleDictionary.registerTransform(name_symbol);
 styleDictionary.registerTransform(sizes_px);
 styleDictionary.registerTransform(px_rem);
 styleDictionary.registerTransform(shadow_shorthand);
+styleDictionary.registerTransform(shadow_properties);
 styleDictionary.registerTransform(typography_shorthand);
 
 /**
@@ -77,7 +79,7 @@ module.exports.makeSCSSTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeESMTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['name/symbol', 'sizes/px', 'px/rem'],
+    transforms: ['name/symbol', 'sizes/px', 'px/rem', 'shadow/properties'],
     files: [
         {
             destination,
@@ -93,7 +95,7 @@ module.exports.makeESMTheme = ({ buildPath, destination }) => ({
  */
 module.exports.makeCJSTheme = ({ buildPath, destination }) => ({
     buildPath,
-    transforms: ['sizes/px', 'px/rem'],
+    transforms: ['sizes/px', 'px/rem', 'shadow/properties'],
     files: [
         {
             destination,
