@@ -2,7 +2,7 @@ const styleDictionary = require('style-dictionary');
 const {makeThemeConfig} = require("./sd-theme-transformer");
 
 console.log('🪩  테마 빌드 START ---------------');
-['design/global.json', 'design/dark.json', 'design/light.json'].map((source) => {
+['design/global.json', 'design/dark.json', 'design/light.json'].forEach((source) => {
     const SD = styleDictionary.extend(makeThemeConfig({
         source,
         buildPath: 'theme/'
