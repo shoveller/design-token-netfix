@@ -5,14 +5,24 @@ const {makeCSSTheme, makeSCSSTheme, makeESMTheme, makeCJSTheme} = require("./pla
  * @param  {theme: string, INPUT_DIR: string, buildPath: string}
  * @returns {import('style-dictionary/types').Config}
  */
-module.exports.makeThemeConfig = ({theme, INPUT_DIR, buildPath}) => {
+module.exports.makeThemeConfig = ({source, buildPath}) => {
+    const [fileName = ''] = /([^\/\\]+\.json)$/.exec(source)
+    if (!fileName) {
+        throw new Error('Invalid source')
+    }
+
+    const [theme = ''] = fileName.split('.')
+    if (!theme) {
+        throw new Error('Invalid source')
+    }
+
     return {
-        source: [`${INPUT_DIR}/${theme}.json`],
+        source: [source],
         platforms: {
             css: makeCSSTheme({
                 buildPath,
                 destination: `css/${theme}.css`,
-                selector: theme.includes('global') ? ':root' : `.${theme}-theme`
+                selector: source.includes('global') ? ':root' : `.${theme}-theme`
             }),
             scss: makeSCSSTheme({
                 buildPath,
