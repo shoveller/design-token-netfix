@@ -1,5 +1,5 @@
 const transformShadow = (shadow) => {
-    const { x, y, blur, spread, color } = shadow;
+    const {x, y, blur, spread, color} = shadow;
     return `${x}px ${y}px ${blur}px ${spread}px ${color}`;
 }
 
@@ -12,8 +12,12 @@ module.exports.shadow_shorthand = {
     transitive: true,
     matcher: (token) => ['boxShadow'].includes(token.type),
     transformer(token) {
-        return Array.isArray(token.original.value)
-            ? token.original.value.map((single) => transformShadow(single)).join(', ')
-            : transformShadow(token.original.value);
+        const {value} = token.original
+
+        if (Array.isArray(value)) {
+            return value.map((single) => transformShadow(single)).join(', ')
+        }
+
+        return transformShadow(value)
     },
 }
